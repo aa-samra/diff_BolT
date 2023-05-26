@@ -14,7 +14,7 @@ if(not "utils" in os.getcwd()):
 from utils import Option
 from utils import Option, calculateMetric
 
-from Models.BolT.model import Model
+from Models.D_BolT.d_model import d_Model
 from Dataset.dataset import getDataset
 
 def train(model, dataset, fold, nOfEpochs):
@@ -94,7 +94,7 @@ def test(model, dataset, fold):
     
 
 
-def run_bolT(hyperParams, datasetDetails, device="cuda:3", analysis=False):
+def run_dbolT(hyperParams, datasetDetails, device="cuda:3", analysis=False):
 
 
     # extract datasetDetails
@@ -120,7 +120,7 @@ def run_bolT(hyperParams, datasetDetails, device="cuda:3", analysis=False):
 
     for fold in range(foldCount):
 
-        model = Model(hyperParams, details)
+        model = d_Model(hyperParams, details)
 
 
         train_preds, train_probs, train_groundTruths, train_loss = train(model, dataset, fold, nOfEpochs)   

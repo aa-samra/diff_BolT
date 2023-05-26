@@ -1,18 +1,18 @@
-from Models.BolT.bolT import BolT
+from Models.D_BolT.d_bolT import d_BolT
 import torch
 import numpy as np
 from einops import rearrange
 
 
 
-class Model():
+class d_Model():
 
     def __init__(self, hyperParams, details):
 
         self.hyperParams = hyperParams
         self.details = details
 
-        self.model = BolT(hyperParams, details)
+        self.model = d_BolT(hyperParams, details)
 
         # load model into gpu
         

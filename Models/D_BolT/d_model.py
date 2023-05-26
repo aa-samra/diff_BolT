@@ -4,7 +4,6 @@ import numpy as np
 from einops import rearrange
 
 
-
 class d_Model():
 
     def __init__(self, hyperParams, details):
@@ -12,7 +11,7 @@ class d_Model():
         self.hyperParams = hyperParams
         self.details = details
 
-        self.model = BolT(hyperParams, details)
+        self.model = d_BolT(hyperParams, details)
 
         # load model into gpu
         

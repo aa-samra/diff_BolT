@@ -120,7 +120,7 @@ def run_dbolT(hyperParams, datasetDetails, device="cuda:3", analysis=False):
 
     for fold in range(foldCount):
 
-        model = Model(hyperParams, details)
+        model = d_Model(hyperParams, details)
 
 
         train_preds, train_probs, train_groundTruths, train_loss = train(model, dataset, fold, nOfEpochs)   

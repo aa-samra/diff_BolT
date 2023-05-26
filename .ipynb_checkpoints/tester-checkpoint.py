@@ -27,6 +27,7 @@ from Dataset.datasetDetails import datasetDetailsDict
 
 from Models.SVM.run import run_svm
 from Models.BolT.run import run_bolT 
+from Models.D_BolT.d_run import run_dbolT 
 # import hyper param fetchers
 
 from Models.SVM.hyperparams import getHyper_svm
@@ -36,6 +37,7 @@ hyperParamDict = {
 
         "svm" : getHyper_svm,
         "bolT" : getHyper_bolT,
+        "d_bolT" : getHyper_bolT,        
 
 }
 
@@ -43,6 +45,7 @@ modelDict = {
 
         "svm" : run_svm,
         "bolT" : run_bolT,
+        "d_bolT": run_dbolT,
 }
 
 
@@ -74,6 +77,8 @@ for i, seed in enumerate(seeds):
 
     print("Running the model with seed : {}".format(seed))
     if(argv.model == "bolT"):
+        results = runModel(hyperParams, Option({**datasetDetails,"datasetSeed":seed}), device="cuda:{}".format(argv.device), analysis=argv.analysis)
+    elif (argv.model == "d_bolT"):
         results = runModel(hyperParams, Option({**datasetDetails,"datasetSeed":seed}), device="cuda:{}".format(argv.device), analysis=argv.analysis)
     else:
         results = runModel(hyperParams, Option({**datasetDetails,"datasetSeed":seed}), device="cuda:{}".format(argv.device))
