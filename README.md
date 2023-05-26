@@ -51,6 +51,13 @@ For training and testing our model run [tester.py](tester.py) file.
     python tester.py --dataset abide1 --model bolT
 
 
+# Work Distribution
+
+* Abdulaziz Samra (main idea, ADNI preprocessing, dataloaders)
+* Oluwafemi Adejumobi (BolT replication, Training with ABIDE-1, Testing with ABIDE-1, making report)
+* Koffivi Gbagbe (BolT replication, Training with ABIDE-1, Testing with ABIDE-1, making report)
+* Charlene Madida (making report)
+* Anton Labutin (making presentation slides)
 # Reference
 Main Repo => https://github.com/icon-lab/BolT
 
