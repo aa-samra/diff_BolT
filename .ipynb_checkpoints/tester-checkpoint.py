@@ -27,7 +27,6 @@ from Dataset.datasetDetails import datasetDetailsDict
 
 from Models.SVM.run import run_svm
 from Models.BolT.run import run_bolT 
-from Models.D_BolT.d_run import run_dbolT 
 # import hyper param fetchers
 
 from Models.SVM.hyperparams import getHyper_svm
@@ -44,7 +43,6 @@ modelDict = {
 
         "svm" : run_svm,
         "bolT" : run_bolT,
-        "d_bolT": run_dbolt
 }
 
 
